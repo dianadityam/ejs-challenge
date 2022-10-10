@@ -31,6 +31,11 @@ app.get('/contact', function(req, res){
 
 app.get('/compose', function(req, res){
   res.render('compose')
+});
+
+app.post('/compose', function(req, res){
+  let journal = req.body.newJournal;
+  console.log(journal);
 })
 
 
