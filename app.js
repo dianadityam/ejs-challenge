@@ -34,9 +34,11 @@ app.get('/compose', function(req, res){
 });
 
 app.post('/compose', function(req, res){
-  let title = req.body.newJournalTitle;
-  let post = req.body.newJournalPost;
-  console.log(title, post);
+  let post = {
+    title: req.body.newJournalTitle,
+    journal: req.body.newJournalPost
+  }
+  console.log(post.title, post.journal);
 })
 
 
