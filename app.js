@@ -16,11 +16,11 @@ app.set('views', './views');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-const wholePost = [];
+let wholePost = [];
 
 
 app.get('/', function(req, res){
-  res.render('home', { startingContent: homeStartingContent });
+  res.render('home', { startingContent: homeStartingContent, newContent: wholePost });
 });
 
 app.get('/about', function(req, res){
@@ -42,7 +42,6 @@ app.post('/compose', function(req, res){
   }
   wholePost.push(post);
   res.redirect('/');
-  console.log(wholePost);
 });
 
 
