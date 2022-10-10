@@ -16,6 +16,8 @@ app.set('views', './views');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+const wholePost = [];
+
 
 app.get('/', function(req, res){
   res.render('home', { startingContent: homeStartingContent });
@@ -34,12 +36,15 @@ app.get('/compose', function(req, res){
 });
 
 app.post('/compose', function(req, res){
-  let post = {
+  const post = {
     title: req.body.newJournalTitle,
-    journal: req.body.newJournalPost
+    content: req.body.newJournalPost
   }
-  console.log(post.title, post.journal);
-})
+  wholePost.push(post);
+  res.redirect('/');
+  console.log(wholePost);
+});
+
 
 
 
