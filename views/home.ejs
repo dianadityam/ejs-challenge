@@ -6,7 +6,7 @@
 <% newContent.forEach(c => { %>
 <h1><%= c.title %></h1>
 <% if (c.content.length > 100) { %>
-<p><%= c.content.slice(0, 100) %> ...</p>
+<p><%= c.content.slice(0, 100) %> ... <a href="/posts/<%= c.title %>">Read More</a></p>
 <% } else { %>
 <p><%= c.content %></p>
 <% }; }); %> 
