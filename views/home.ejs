@@ -1,11 +1,14 @@
-<%- include('./partials/header.ejs') %> 
+<%- include('./partials/header.ejs') %>
 
 <h1>Home</h1>
 <p><%= startingContent %></p>
 
-<% newContent.forEach(c => {  %>
-    <h1> <%= c.title %> </h1>
-    <p> <%= c.content %> </p>
-<% }); %> 
+<% newContent.forEach(c => { %>
+<h1><%= c.title %></h1>
+<% if (c.content.length > 100) { %>
+<p><%= c.content.slice(0, 100) %> ...</p>
+<% } else { %>
+<p><%= c.content %></p>
+<% }; }); %> 
 
-<%- include('./partials/footer.ejs') %> 
+<%- include('./partials/footer.ejs') %>
