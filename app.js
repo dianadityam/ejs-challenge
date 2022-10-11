@@ -35,6 +35,10 @@ app.get('/compose', function(req, res){
   res.render('compose')
 });
 
+app.get('/posts/:postId', function(req, res){
+  console.log(req.params.postId);
+})
+
 app.post('/compose', function(req, res){
   const post = {
     title: req.body.newJournalTitle,
